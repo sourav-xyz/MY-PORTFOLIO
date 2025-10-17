@@ -1,4 +1,7 @@
- // Utility: qs / qsa
+document.documentElement.classList.add("dark");
+localStorage.setItem("theme", "dark");
+
+// Utility: qs / qsa
         const qs = (sel, ctx = document) => ctx.querySelector(sel);
         const qsa = (sel, ctx = document) =>
             Array.from(ctx.querySelectorAll(sel));
