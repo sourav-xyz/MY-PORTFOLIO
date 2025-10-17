@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth [--header-h:4rem]">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sourabha Bisoyi — Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Sourabha Bisoyi, BCA Final Year Student and aspiring full-stack developer." />
+    <meta name="color-scheme" content="light dark" />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @theme inline {
+        /* Colors: keep to 4-5 colors total: primary, neutrals, and 1 accent */
+        --color-primary-50: #eff6ff;
+        --color-primary-100: #dbeafe;
+        --color-primary-200: #bfdbfe;
+        --color-primary-300: #93c5fd;
+        --color-primary-400: #60a5fa;
+        --color-primary-500: #3b82f6; /* primary brand (blue) */
+        --color-primary-600: #2563eb;
+        --color-primary-700: #1d4ed8;
+        --color-primary-800: #1e40af;
+        --color-primary-900: #1e3a8a;
+
+        --color-accent-500: #10b981; /* accent (emerald/teal) */
+        --color-accent-600: #059669;
+
+        --color-bg: var(--color-white);
+        --color-fg: var(--color-slate-900);
+        --color-muted: var(--color-slate-500);
+        --color-card: var(--color-white);
+
+        --color-bg-dark: var(--color-slate-950);
+        --color-fg-dark: var(--color-slate-100);
+        --color-muted-dark: var(--color-slate-400);
+        --color-card-dark: rgb(3 7 18 / 0.7);
+
+        --radius: 0.75rem;
+      }
+
+      /* Keyframes for animations */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+      @keyframes pulse-soft {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.02);
+          opacity: 0.95;
+        }
+      }
+      @keyframes fade-up {
+        0% {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 0 rgba(16, 185, 129, 0);
+        }
+        50% {
+          box-shadow: 0 0 24px rgba(16, 185, 129, 0.35);
+        }
+      }
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Utility animation helpers */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.7s cubic-bezier(0.21, 1, 0.21, 1);
+      }
+
+      .btn-shimmer {
+        background-image: linear-gradient(
+          110deg,
+          rgba(255, 255, 255, 0.12) 0%,
+          rgba(255, 255, 255, 0) 22%,
+          rgba(255, 255, 255, 0.12) 45%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 2s infinite linear;
+      }
+
+      .ring-glow {
+        animation: glow 3.5s ease-in-out infinite;
+      }
+
+      /* Sticky header height var and safe area spacing */
+      :root {
+        --header-h: 4rem;
+      }
+      .safe-top {
+        padding-top: var(--header-h);
+      }
+
+      /* Scrollbar styling for better polish */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgb(100 116 139 / 0.4);
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      /* Dark mode class overrides */
+      html.dark body {
+        color-scheme: dark;
+      }
+    </style>
+</head>
+
+<body
+    class="antialiased bg-[--color-bg] text-[--color-fg] dark:bg-[--color-bg-dark] dark:text-[--color-fg-dark] selection:bg-primary-200 dark:selection:bg-primary-800">
+    <a href="#home"
+        class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:bg-primary-600 focus:text-white focus:px-3 focus:py-2 focus:rounded-md">Skip
+        to main content</a>
+
+    <header class="fixed inset-x-0 -top-0 z-40 pt-5">
+        <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-[--header-h] flex items-center justify-between">
+            <a href="#home" class="inline-flex items-center gap-2 font-semibold tracking-tight group"
+                aria-label="Go to home">
+                <span
+                    class="inline-grid size-9 place-items-center rounded-full bg-primary-600 text-white ring-2 ring-primary-300/60 dark:ring-primary-800/60 ring-glow">
+                    <span class="text-base">SB</span>
+                </span>
+                <span class="text-lg">Sourabha Bisoyi</span>
+            </a>
+            <ul class="hidden md:flex items-center gap-1" role="menubar" aria-label="Primary">
+                <li role="none">
+                    <a role="menuitem" data-navlink href="#home"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/80 dark:text-slate-300 dark:hover:text-slate-50 dark:hover:bg-slate-900/60">Home</a>
+                </li>
+                <li role="none">
+                    <a role="menuitem" data-navlink href="#about"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/80 dark:text-slate-300 dark:hover:text-slate-50 dark:hover:bg-slate-900/60">About</a>
+                </li>
+                <li role="none">
+                    <a role="menuitem" data-navlink href="#skills"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/80 dark:text-slate-300 dark:hover:text-slate-50 dark:hover:bg-slate-900/60">Skills</a>
+                </li>
+                <li role="none">
+                    <a role="menuitem" data-navlink href="#projects"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/80 dark:text-slate-300 dark:hover:text-slate-50 dark:hover:bg-slate-900/60">Projects</a>
+                </li>
+                <li role="none">
+                    <a role="menuitem" data-navlink href="#contact"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/80 dark:text-slate-300 dark:hover:text-slate-50 dark:hover:bg-slate-900/60">Contact</a>
+                </li>
+            </ul>
+            <div class="flex items-center gap-2">
+                <button hidden id="themeToggle" type="button"
+                    class="inline-flex items-center justify-center h-10 w-10 rounded-md border border-slate-200/70 dark:border-slate-800/70 hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition"
+                    aria-label="Toggle theme" aria-pressed="false">
+                    <i class="ri-sun-line hidden dark:inline-block text-xl"></i>
+                    <i class="ri-moon-line inline-block dark:hidden text-xl"></i>
+                </button>
+                <a href="https://docs.google.com/document/d/1T9xIFOILXsj_RMfAQ4C7Ni0pEFMYDsINPOzgDUcfLks/edit?usp=drive_link"
+                    target="_blank" rel="noopener noreferrer"
+                    class="hidden md:inline-flex items-center gap-2 rounded-md border border-primary-200/60 dark:border-primary-800/60 bg-primary-600 text-white px-4 py-2 text-sm font-medium hover:bg-primary-700 active:bg-primary-800 btn-shimmer transition">
+                    <i class="ri-file-download-line text-lg"></i> <span>Resume</span>
+                </a>
+                <button id="menuToggle"
+                    class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200/70 dark:border-slate-800/70 hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition"
+                    aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+                    <i class="ri-menu-4-line text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobileNav"
+            class="md:hidden pointer-events-none opacity-0 translate-y-[-8px] transition-all duration-300">
+            <div
+                class="mx-4 rounded-lg border border-slate-200/60 dark:border-slate-800/60 bg-white/90 dark:bg-slate-950/80 backdrop-blur p-2">
+                <ul class="flex flex-col" aria-label="Mobile Primary">
+                    <li>
+                        <a data-navlink href="#home"
+                            class="block px-3 py-2 rounded-md text-slate-800 hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-900">Home</a>
+                    </li>
+                    <li>
+                        <a data-navlink href="#about"
+                            class="block px-3 py-2 rounded-md text-slate-800 hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-900">About</a>
+                    </li>
+                    <li>
+                        <a data-navlink href="#skills"
+                            class="block px-3 py-2 rounded-md text-slate-800 hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-900">Skills</a>
+                    </li>
+                    <li>
+                        <a data-navlink href="#projects"
+                            class="block px-3 py-2 rounded-md text-slate-800 hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-900">Projects</a>
+                    </li>
+                    <li>
+                        <a data-navlink href="#contact"
+                            class="block px-3 py-2 rounded-md text-slate-800 hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-900">Contact</a>
+                    </li>
+                    <li class="pt-1">
+                        <a href="https://drive.google.com/file/d/YOUR_GOOGLE_DRIVE_FILE_ID/view?usp=sharing"
+                            target="_blank" rel="noopener noreferrer"
+                            class="flex items-center gap-2 rounded-md border border-primary-200/60 dark:border-primary-800/60 bg-primary-600 text-white px-3 py-2 text-sm font-medium hover:bg-primary-700 active:bg-primary-800 transition">
+                            <i class="ri-file-download-line text-lg"></i>
+                            <span>Resume</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main id="home" class="safe-top">
+        <section class="relative overflow-hidden">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-28 lg:pb-32">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <div class="reveal [animation:fade-up_.8s_ease_.05s_both]">
+                        <div
+                            class="inline-flex items-center gap-2 rounded-full border border-slate-200/60 dark:border-slate-800/60 px-2.5 py-1 text-xs text-slate-600 dark:text-slate-300">
+                            <span class="inline-flex size-2 rounded-full bg-accent-500"></span>
+                            <span>Open to opportunities</span>
+                        </div>
+                        <h1 class="mt-4 text-balance text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight">
+                            Building the Future with Clean, Modern Code
+                        </h1>
+                        <p class="mt-5 text-pretty text-base sm:text-lg text-slate-600 dark:text-slate-300">
+                            I’m Sourabha Bisoyi, a BCA final-year student who loves crafting
+                            responsive, accessible, and performant web experiences. I
+                            specialize in modern JS, full‑stack fundamentals, and thoughtful
+                            UI engineering.
+                        </p>
+
+                        <div class="mt-6 flex items-center gap-3">
+                            <a href="#projects"
+                                class="inline-flex items-center gap-2 rounded-md bg-primary-600 text-white px-4 py-2 font-medium hover:bg-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-500 active:bg-primary-800 transition btn-shimmer">
+                                <i class="ri-rocket-2-line text-lg"></i>
+                                <span>View Projects</span>
+                            </a>
+                            <a href="#contact"
+                                class="inline-flex items-center gap-2 rounded-md border border-slate-200/70 dark:border-slate-800/70 px-4 py-2 font-medium hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition">
+                                <i class="ri-send-plane-2-line text-lg"></i>
+                                <span>Contact Me</span>
+                            </a>
+                        </div>
+
+                        <div class="mt-8 flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                            <a class="hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="https://x.com/" target="_blank" rel="noopener noreferrer"
+                                aria-label="X (Twitter)">
+                                <i class="ri-twitter-x-line text-2xl"></i>
+                            </a>
+                            <a class="hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="www.linkedin.com/in/sourabha-bisoyi-63072837b" target="_blank"
+                                rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="ri-linkedin-fill text-2xl"></i>
+                            </a>
+                            <a class="hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="https://github.com/sourav-xyz" target="_blank" rel="noopener noreferrer"
+                                aria-label="GitHub">
+                                <i class="ri-github-fill text-2xl"></i>
+                            </a>
+                            <a class="hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="https://www.instagram.com/_.so.urav_?igsh=MWlvYXM3M2w4OHZ2aA==" target="_blank"
+                                rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="ri-instagram-line text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative reveal flex items-center  justify-center flex-col animation:fade-[up_.8s_ease_.15s_both]">
+                        <div
+                            class="mx-auto w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full ring-4 ring-primary-300/60 dark:ring-primary-800/60 ring-offset-2 ring-offset-white dark:ring-offset-slate-950 overflow-hidden animate-[float_5s_ease-in-out_infinite]">
+                            <img src="images/WhatsApp Image 2025-10-17 at 17.53.54_eab69f51.jpg" alt="Portrait of Sourabha Bisoyi" class="size-full object-cover object-top scale-[1.3] ml-4" />
+                        </div>
+                        <div class="absolute inset-x-0 -bottom-6 flex justify-center">
+                            <div
+                                class="px-4 py-2 rounded-full bg-white/80 dark:bg-slate-900/60 backdrop-blur border border-slate-200/60 dark:border-slate-800/60 text-sm">
+                                <span class="inline-flex items-center gap-1 text-slate-700 dark:text-slate-300">
+                                    <i class="ri-code-s-slash-line"></i> BCA Final Year •
+                                    Full‑stack Enthusiast
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div
+                        class="reveal group rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-6 transition hover:shadow-lg">
+                        <div class="flex items-center gap-3">
+                            <i class="ri-sparkling-2-line text-primary-600 text-2xl"></i>
+                            <span class="text-3xl font-semibold" data-counter data-target="3">0</span>
+                        </div>
+                        <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                            Projects Completed
+                        </p>
+                    </div>
+                    <div
+                        class="reveal group rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-6 transition hover:shadow-lg">
+                        <div class="flex items-center gap-3">
+                            <i class="ri-cpu-line text-primary-600 text-2xl"></i>
+                            <span class="text-3xl font-semibold" data-counter data-target="8">0</span>
+                        </div>
+                        <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                            Technologies
+                        </p>
+                    </div>
+                    <div
+                        class="reveal group rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-6 transition hover:shadow-lg">
+                        <div class="flex items-center gap-3">
+                            <i class="ri-time-line text-primary-600 text-2xl"></i>
+                            <span class="text-3xl font-semibold" data-counter data-target="3">0</span>
+                        </div>
+                        <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                            Years Experience
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 sm:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal max-w-2xl">
+                    <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-balance">
+                        About Me
+                    </h2>
+                    <p class="mt-4 text-slate-600 dark:text-slate-300">
+                        I’m a final-year BCA student with a strong foundation in CS
+                        fundamentals and web development. I love turning complex problems
+                        into intuitive, accessible interfaces. My focus is on modern
+                        JavaScript, clean component design, and pragmatic full‑stack
+                        patterns.
+                    </p>
+                    <p class="mt-4 text-slate-600 dark:text-slate-300">
+                        Outside of coding, I enjoy learning new tools, contributing to
+                        small projects, and studying UX. I’m always exploring performance
+                        improvements, DX workflows, and tasteful animation to create
+                        delightful experiences.
+                    </p>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="reveal rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-6">
+                        <div class="flex items-center gap-3">
+                            <i class="ri-briefcase-4-line text-primary-600 text-2xl"></i>
+                            <h3 class="text-lg font-semibold">What I Do</h3>
+                        </div>
+                        <ul class="mt-3 text-slate-600 dark:text-slate-300 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="ri-check-line mt-0.5 text-accent-600"></i><span>Build responsive UIs with
+                                    semantic HTML & accessible
+                                    patterns</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ri-check-line mt-0.5 text-accent-600"></i><span>Design modular components with
+                                    Tailwind</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ri-check-line mt-0.5 text-accent-600"></i><span>Connect basic backends &
+                                    APIs</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="reveal rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-6">
+                        <div class="flex items-center gap-3">
+                            <i class="ri-bard-line text-primary-600 text-2xl"></i>
+                            <h3 class="text-lg font-semibold">Values</h3>
+                        </div>
+                        <ul class="mt-3 text-slate-600 dark:text-slate-300 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="ri-check-line mt-0.5 text-accent-600"></i><span>Clarity over cleverness</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ri-check-line mt-0.5 text-accent-600"></i><span>Performance and
+                                    accessibility</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ri-check-line mt-0.5 text-accent-600"></i><span>Maintainable, testable
+                                    code</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="reveal rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-6">
+                        <div class="flex items-center gap-3">
+                            <i class="ri-heart-pulse-line text-primary-600 text-2xl"></i>
+                            <h3 class="text-lg font-semibold">Currently</h3>
+                        </div>
+                        <ul class="mt-3 text-slate-600 dark:text-slate-300 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="ri-check-line mt-0.5 text-accent-600"></i><span>Exploring UI patterns and
+                                    animation systems</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ri-check-line mt-0.5 text-accent-600"></i><span>Sharpening JS and
+                                    TypeScript</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ri-check-line mt-0.5 text-accent-600"></i><span>Contributing to personal
+                                    projects</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20 sm:py-24 bg-slate-50 dark:bg-slate-900/30">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
+                        Technical Skills
+                    </h2>
+                    <p class="mt-3 text-slate-600 dark:text-slate-300">
+                        A selection of tools and technologies I work with regularly.
+                    </p>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <article
+                        class="reveal group flex flex-col items-center justify-center rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-6 hover:shadow-lg transition">
+                        <!-- Title section -->
+                        <div class="flex items-center gap-3 cursor-pointer">
+                            <i class="ri-computer-line text-2xl text-primary-600"></i>
+                            <h3 class="text-lg font-semibold">Frontend</h3>
+                        </div>
+
+                        <!-- Hidden list (visible on hover) -->
+                        <ul
+                            class="mt-4 text-slate-600 dark:text-slate-300 space-y-2 opacity-0 max-h-0 overflow-hidden transition-all duration-300 ease-out group-hover:opacity-100 group-hover:max-h-96">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>HTML5 & CSS3</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>JavaScript (ES6+)</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>React basics</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>Responsive UI</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article
+                        class="reveal group flex flex-col items-center justify-center rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-6 hover:shadow-lg transition">
+                        <div class="flex items-center gap-3 cursor-pointer">
+                            <i class="ri-settings-2-line text-2xl text-primary-600"></i>
+                            <h3 class="text-lg font-semibold">Backend</h3>
+                        </div>
+                        <ul
+                            class="mt-4 text-slate-600 dark:text-slate-300 space-y-2 opacity-0 max-h-0 overflow-hidden transition-all duration-300 ease-out group-hover:opacity-100 group-hover:max-h-96">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>Node.js</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>Python</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>Java</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>REST APIs</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- ⚙️ Tools Card -->
+                    <article
+                        class="reveal group flex flex-col items-center justify-center rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-6 hover:shadow-lg transition">
+                        <div class="flex items-center gap-3 cursor-pointer">
+                            <i class="ri-tools-line text-2xl text-primary-600"></i>
+                            <h3 class="text-lg font-semibold">Tools</h3>
+                        </div>
+                        <ul
+                            class="mt-4 text-slate-600 dark:text-slate-300 space-y-2 opacity-0 max-h-0 overflow-hidden transition-all duration-300 ease-out group-hover:opacity-100 group-hover:max-h-96">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>Git & GitHub</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>VS Code</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>Docker basics</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-checkbox-circle-line text-accent-600"></i><span>Postman</span>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="flex w-full items-center justify-center">
+                    <div class="mt-10 overflow-hidden">
+                        <div
+                            class="flex gap-8 whitespace-nowrap will-change-transform animate-[marquee_20s_linear_infinite]">
+                            <span class="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <i class="ri-html5-line text-xl text-primary-600"></i> HTML
+                            </span>
+                            <span class="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <i class="ri-css3-line text-xl text-primary-600"></i> CSS
+                            </span>
+                            <span class="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <i class="ri-javascript-line text-xl text-primary-600"></i>
+                                JavaScript
+                            </span>
+                            <span class="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <i class="ri-reactjs-line text-xl text-primary-600"></i> React
+                            </span>
+                            <span class="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <i class="ri-nodejs-line text-xl text-primary-600"></i>
+                                Node.js
+                            </span>
+                            <span class="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <i class="ri-database-2-line text-xl text-primary-600"></i>
+                                SQL
+                            </span>
+                            <span class="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <i class="ri-github-line text-xl text-primary-600"></i> GitHub
+                            </span>
+                            <span class="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <i class="ri-dv-line text-xl text-primary-600"></i> Docker
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 sm:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
+                        Featured Projects
+                    </h2>
+                    <p class="mt-3 text-slate-600 dark:text-slate-300">
+                        Highlights from my recent work and experiments.
+                    </p>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <article
+                        class="reveal group rounded-2xl overflow-hidden border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] hover:shadow-xl transition">
+                        <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-900">
+  <div class="absolute inset-0 grid overflow-hidden place-items-center">
+    <img
+      src="https://i.pinimg.com/736x/86/83/94/868394ba3d38a28ad22a0980fa13c616.jpg"
+      alt="Preview Image"
+      class="w-full h-full object-cover rounded-md"
+    />
+  </div>
+</div>
+
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 text-sm text-slate-500">
+                                <i class="ri-calendar-line"></i><span>2025</span>
+                            </div>
+                            <h3 class="mt-1 text-xl font-semibold">E‑Commerce Platform</h3>
+                            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                                A full‑stack e‑commerce solution with authentication, product
+                                management, cart, and basic payments flow.
+                            </p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span
+                                    class="inline-flex items-center gap-1 text-xs rounded-full border border-slate-200/60 dark:border-slate-800/60 px-2 py-1 text-slate-600 dark:text-slate-300"><i
+                                        class="ri-reactjs-line"></i> React</span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-xs rounded-full border border-slate-200/60 dark:border-slate-800/60 px-2 py-1 text-slate-600 dark:text-slate-300"><i
+                                        class="ri-nodejs-line"></i> Node</span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-xs rounded-full border border-slate-200/60 dark:border-slate-800/60 px-2 py-1 text-slate-600 dark:text-slate-300"><i
+                                        class="ri-database-2-line"></i> MongoDB</span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-xs rounded-full border border-slate-200/60 dark:border-slate-800/60 px-2 py-1 text-slate-600 dark:text-slate-300"><i
+                                        class="ri-exchange-dollar-line"></i> Payments</span>
+                            </div>
+                            <div class="mt-4 flex items-center gap-2">
+                                <a href="#"
+                                    class="inline-flex items-center gap-1 rounded-md border border-slate-200/70 dark:border-slate-800/70 px-3 py-1.5 text-sm hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition"><i
+                                        class="ri-external-link-line"></i> Live</a>
+                                <a href="#"
+                                    class="inline-flex items-center gap-1 rounded-md border border-slate-200/70 dark:border-slate-800/70 px-3 py-1.5 text-sm hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition"><i
+                                        class="ri-github-line"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="reveal group rounded-2xl overflow-hidden border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] hover:shadow-xl transition">
+                        <div class="relative aspect-[16/10] bg-slate-100 dark:bg-slate-900">
+  <div class="absolute inset-0 grid place-items-center overflow-hidden">
+    <img
+      src="https://i.pinimg.com/736x/37/b8/69/37b86959ba823a2d8c06b1eb8ba76f5c.jpg"
+      alt="Preview Image"
+      class="w-full h-full object-cover rounded-md"
+    />
+  </div>
+</div>
+
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 text-sm text-slate-500">
+                                <i class="ri-calendar-line"></i><span>2025</span>
+                            </div>
+                            <h3 class="mt-1 text-xl font-semibold">
+                                Task Management System
+                            </h3>
+                            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                                A productivity app for managing tasks and collaborating with
+                                basic real‑time updates.
+                            </p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span
+                                    class="inline-flex items-center gap-1 text-xs rounded-full border border-slate-200/60 dark:border-slate-800/60 px-2 py-1 text-slate-600 dark:text-slate-300"><i
+                                        class="ri-javascript-line"></i> JavaScript</span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-xs rounded-full border border-slate-200/60 dark:border-slate-800/60 px-2 py-1 text-slate-600 dark:text-slate-300"><i
+                                        class="ri-fire-line"></i> Firebase</span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-xs rounded-full border border-slate-200/60 dark:border-slate-800/60 px-2 py-1 text-slate-600 dark:text-slate-300"><i
+                                        class="ri-css3-line"></i> CSS3</span>
+                            </div>
+                            <div class="mt-4 flex items-center gap-2">
+                                <a href="#"
+                                    class="inline-flex items-center gap-1 rounded-md border border-slate-200/70 dark:border-slate-800/70 px-3 py-1.5 text-sm hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition"><i
+                                        class="ri-external-link-line"></i> Live</a>
+                                <a href="#"
+                                    class="inline-flex items-center gap-1 rounded-md border border-slate-200/70 dark:border-slate-800/70 px-3 py-1.5 text-sm hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition"><i
+                                        class="ri-github-line"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+              <article
+    class="reveal group rounded-2xl overflow-hidden border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] hover:shadow-xl transition">
+  <div class="relative aspect-[16/10] bg-slate-100  overflow-hidden  dark:bg-slate-900">
+    <div class="absolute inset-0 grid place-items-center overflow-hidden  ">
+      <img
+        src="https://i.pinimg.com/736x/7d/77/f0/7d77f062269ee85cf1657729cd682aa2.jpg"
+        alt="Event Booking Preview"
+        class="w-full h-full object-cover rounded-md"
+      />
+    </div>
+  </div>
+
+  <div class="p-5">
+      <div class="flex items-center gap-2 text-sm text-slate-500">
+          <i class="ri-calendar-line"></i><span>2025</span>
+      </div>
+      <h3 class="mt-1 text-xl font-semibold">
+          Event Booking Platform
+      </h3>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          A platform to browse upcoming events, book tickets, and receive digital QR code tickets instantly.
+          Organizers can manage events, track bookings, and provide real-time updates to users.
+      </p>
+      <div class="mt-3 flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1 text-xs rounded-full border border-slate-200/60 dark:border-slate-800/60 px-2 py-1 text-slate-600 dark:text-slate-300"><i class="ri-reactjs-line"></i> React</span>
+          <span class="inline-flex items-center gap-1 text-xs rounded-full border border-slate-200/60 dark:border-slate-800/60 px-2 py-1 text-slate-600 dark:text-slate-300"><i class="ri-node-tree"></i> Node.js</span>
+          <span class="inline-flex items-center gap-1 text-xs rounded-full border border-slate-200/60 dark:border-slate-800/60 px-2 py-1 text-slate-600 dark:text-slate-300"><i class="ri-database-2-line"></i> MongoDB</span>
+      </div>
+      <div class="mt-4 flex items-center gap-2">
+          <a href="#"
+              class="inline-flex items-center gap-1 rounded-md border border-slate-200/70 dark:border-slate-800/70 px-3 py-1.5 text-sm hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition"><i class="ri-external-link-line"></i> Live</a>
+          <a href="#"
+              class="inline-flex items-center gap-1 rounded-md border border-slate-200/70 dark:border-slate-800/70 px-3 py-1.5 text-sm hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition"><i class="ri-github-line"></i> Code</a>
+      </div>
+  </div>
+</article>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 sm:py-24 bg-slate-50 dark:bg-slate-900/30">
+            <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
+                        Frequently Asked Questions
+                    </h2>
+                </div>
+                <div class="mt-10 space-y-4">
+                    <details
+                        class="reveal group rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-5 open:shadow-md transition">
+                        <summary class="flex cursor-pointer items-center justify-between gap-3 text-left">
+                            <span class="text-base font-medium">What technologies do you prefer for new projects?</span>
+                            <i class="ri-arrow-down-s-line text-xl transition group-open:rotate-180"></i>
+                        </summary>
+                        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">
+                            I lean on modern JavaScript, Tailwind CSS for styling, and pick
+                            backend tools based on the project scope.
+                        </p>
+                    </details>
+                    <details
+                        class="reveal group rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-5 open:shadow-md transition">
+                        <summary class="flex cursor-pointer items-center justify-between gap-3 text-left">
+                            <span class="text-base font-medium">Do you focus on performance and accessibility?</span>
+                            <i class="ri-arrow-down-s-line text-xl transition group-open:rotate-180"></i>
+                        </summary>
+                        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">
+                            Yes. I value clean semantics, keyboard navigation, color
+                            contrast, and fast interactions.
+                        </p>
+                    </details>
+                    <details
+                        class="reveal group rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-5 open:shadow-md transition">
+                        <summary class="flex cursor-pointer items-center justify-between gap-3 text-left">
+                            <span class="text-base font-medium">Are you available for internships or part‑time
+                                work?</span>
+                            <i class="ri-arrow-down-s-line text-xl transition group-open:rotate-180"></i>
+                        </summary>
+                        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">
+                            I’m open to opportunities where I can learn and contribute
+                            meaningfully.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 sm:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                    <div class="reveal">
+                        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
+                            Let’s Connect
+                        </h2>
+                        <p class="mt-3 text-slate-600 dark:text-slate-300">
+                            Have a question or want to discuss a project? I’d love to hear
+                            from you.
+                        </p>
+
+                        <div class="mt-6 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="inline-grid size-10 place-items-center rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800/70">
+                                    <i class="ri-mail-line text-xl"></i>
+                                </span>
+                                <a class="text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                    href="mailto:sourabhabisoyi18@gmail.com">
+                                    sourabhabisoyi18@gmail.com
+                                </a>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="inline-grid size-10 place-items-center rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800/70">
+                                    <i class="ri-phone-line text-xl"></i>
+                                </span>
+                                <a class="text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                    href="tel:+919658780033">
+                                    +91 9658780033
+                                </a>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="inline-grid size-10 place-items-center rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800/70">
+                                    <i class="ri-map-pin-2-line text-xl"></i>
+                                </span>
+                                <span class="text-slate-700 dark:text-slate-200">India</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                            <a class="hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="https://x.com/" target="_blank" rel="noopener noreferrer"
+                                aria-label="X (Twitter)">
+                                <i class="ri-twitter-x-line text-2xl"></i>
+                            </a>
+                            <a class="hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="http://www.linkedin.com/in/sourabha-bisoyi-63072837b" target="_blank"
+                                rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="ri-linkedin-fill text-2xl"></i>
+                            </a>
+                            <a class="hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="https://github.com/sourav-xyz" target="_blank" rel="noopener noreferrer"
+                                aria-label="GitHub">
+                                <i class="ri-github-fill text-2xl"></i>
+                            </a>
+                            <a class="hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="https://www.instagram.com/_.so.urav_?igsh=MWlvYXM3M2w4OHZ2aA==" target="_blank"
+                                rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="ri-instagram-line text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form onsubmit="event.preventDefault(); handleContactSubmit(this);"
+                        class="reveal rounded-2xl border border-slate-200/70 dark:border-slate-800/70 bg-[--color-card] dark:bg-[--color-card-dark] p-6"
+                        onsubmit="event.preventDefault(); handleContactSubmit(this);">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex flex-col gap-2">
+                                <label for="name" class="text-sm font-medium">Name</label>
+                                <input id="name" name="name" required type="text" placeholder="Your name"
+                                    class="rounded-md border border-slate-200/70 dark:border-slate-800/70 bg-white dark:bg-slate-950 px-3 py-2 outline-none focus:ring-2 focus:ring-primary-500" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label for="email" class="text-sm font-medium">Email</label>
+                                <input id="email" name="email" required type="email" placeholder="you@example.com"
+                                    class="rounded-md border border-slate-200/70 dark:border-slate-800/70 bg-white dark:bg-slate-950 px-3 py-2 outline-none focus:ring-2 focus:ring-primary-500" />
+                            </div>
+                        </div>
+                        <div class="mt-4 flex flex-col gap-2">
+                            <label for="subject" class="text-sm font-medium">Subject</label>
+                            <input id="subject" name="subject" required type="text" placeholder="How can I help?"
+                                class="rounded-md border border-slate-200/70 dark:border-slate-800/70 bg-white dark:bg-slate-950 px-3 py-2 outline-none focus:ring-2 focus:ring-primary-500" />
+                        </div>
+                        <div class="mt-4 flex flex-col gap-2">
+                            <label for="message" class="text-sm font-medium">Message</label>
+                            <textarea id="message" name="message" required rows="6" placeholder="Your message..."
+                                class="rounded-md border border-slate-200/70 dark:border-slate-800/70 bg-white dark:bg-slate-950 px-3 py-2 outline-none focus:ring-2 focus:ring-primary-500"></textarea>
+                        </div>
+                        <div class="mt-5 flex items-center gap-3">
+                            <button type="submit"
+                                class="inline-flex items-center gap-2 rounded-md bg-primary-600 text-white px-4 py-2 font-medium hover:bg-primary-700 active:bg-primary-800 transition">
+                                <i class="ri-send-plane-fill"></i>
+                                <span>Send Message</span>
+                            </button>
+                            <p id="contactStatus" class="text-sm text-slate-600 dark:text-slate-300"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer
+        class="border-t border-slate-200/60 dark:border-slate-800/60 bg-white/60 dark:bg-slate-950/40 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="inline-flex items-center gap-2 font-semibold tracking-tight">
+                        <span
+                            class="inline-grid size-9 place-items-center rounded-full bg-primary-600 text-white ring-2 ring-primary-300/60 dark:ring-primary-800/60">
+                            <span class="text-base">SB</span>
+                        </span>
+                        <span class="text-lg">Sourabha Bisoyi</span>
+                    </div>
+                    <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">
+                        BCA Student & aspiring full‑stack developer helping individuals
+                        and teams with modern web interfaces.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-semibold">Quick Links</h3>
+                    <ul class="mt-3 space-y-2">
+                        <li>
+                            <a class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="#about">About</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="#skills">Skills</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="#projects">Projects</a>
+                        </li>
+                        <li>
+                            <a class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition"
+                                href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-semibold">Stay in Touch</h3>
+                    <div class="mt-3 flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                        <a class="hover:text-primary-600 dark:hover:text-primary-400 transition" href="https://x.com/"
+                            target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                            <i class="ri-twitter-x-line text-2xl"></i>
+                        </a>
+                        <a class="hover:text-primary-600 dark:hover:text-primary-400 transition"
+                            href="www.linkedin.com/in/sourabha-bisoyi-63072837b" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="ri-linkedin-fill text-2xl"></i>
+                        </a>
+                        <a class="hover:text-primary-600 dark:hover:text-primary-400 transition"
+                            href="https://github.com/sourav-xyz" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub">
+                            <i class="ri-github-fill text-2xl"></i>
+                        </a>
+                        <a class="hover:text-primary-600 dark:hover:text-primary-400 transition"
+                            href="https://www.instagram.com/_.so.urav_?igsh=MWlvYXM3M2w4OHZ2aA==" target="_blank"
+                            rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="ri-instagram-line text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-slate-200/60 dark:border-slate-800/60 pt-6">
+                <p class="text-sm text-slate-600 dark:text-slate-300">
+                    &copy; <span id="year"></span> Sourabha Bisoyi. All rights reserved.
+                </p>
+                <button id="backToTop"
+                    class="inline-flex items-center gap-2 rounded-md border border-slate-200/70 dark:border-slate-800/70 px-3 py-1.5 text-sm hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition">
+                    <i class="ri-arrow-up-line"></i>
+                    <span>Back to top</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+<script src="script.js" ></script>
+
+</body>
+
+</html>
